@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motivasi Pentas Seni</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 50, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.5s;
+    }
+    .hidden { display: none; }
+    .next-btn {
+      background: #3498db;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/7QpKsCX/rain.gif') repeat;
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg-video">
+    <source src="video-background.mp4" type="video/mp4">
+  </video>  <div class="slide" id="slide0">
+    <h1>Semangat Pentas Seni!</h1>
+    <p>Hari ini, kamu bukan sekadar memainkan musik. Kamu adalah jiwa yang menghidupkan panggung teater dengan alunan nada dan perasaan.</p>
+    <button class="next-btn" onclick="nextSlide()">Next</button>
+  </div>  <div class="slide hidden" id="slide1">
+    <h1>Pantun Manis Untukmu</h1>
+    <p>Bintang terang di langit biru,<br>Senjamu indah membuai rindu.<br>Pentas malam akan bersinar selalu,<br>Karena kamu musisi yang paling lucu!</p>
+    <button class="next-btn" onclick="nextSlide()">Next</button>
+  </div>  <div class="slide hidden" id="slide2">
+    <h1>Tentang kamu</h1>
+    <p>Aku tak tahu banyak soalmu. Tapi dari caramu bicara dan bercanda, terlihat kamu orang yang tulus, punya rasa ingin tahu, dan diam-diam punya mimpi besar.</p>
+    <button class="next-btn" onclick="nextSlide()">Next</button>
+  </div>  <div class="slide hidden" id="slide3">
+    <h1>Afirmasi Malam Ini</h1>
+    <p>Aku siap. Aku mampu. Aku adalah pemusik luar biasa yang akan membuat malam ini abadi dalam kenangan semua orang.</p>
+    <div class="rain"></div>
+  </div>  <script>
+    let current = 0;
+    function nextSlide() {
+      document.getElementById('slide' + current).classList.add('hidden');
+      current++;
+      document.getElementById('slide' + current).classList.remove('hidden');
+    }
+  </script></body>
+</html>
